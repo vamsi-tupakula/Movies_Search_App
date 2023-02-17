@@ -24,8 +24,7 @@ function App() {
   }
 
   useEffect(() => {
-    axios.get(`http://www.omdbapi.com/?apikey=56546cdc&t=tenet`).then(res => setMovie(res.data));
-    console.log(movie)
+    axios.get(`http://www.omdbapi.com/?apikey=56546cdc&t=tenet`).then(res => setMovie(res.data));    
   }, [])
 
   return (
