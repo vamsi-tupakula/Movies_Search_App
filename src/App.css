@@ -35,6 +35,10 @@
     cursor: pointer;
 }
 
+.searchBtn:hover {
+    background-color: #1273a0;
+}
+
 @media (max-width: 920px) {
     .container {
         display: flex;
