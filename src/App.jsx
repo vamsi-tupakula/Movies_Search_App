@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import MoviePane from "./components/MoviePane";
 import "./App.css";
 import axios from "axios";
@@ -24,12 +24,12 @@ function App() {
   }
 
   const initialFetch = () => {
-    axios.get(`http://www.omdbapi.com/?apikey=56546cdc&t=tenet`).then(res => setMovie(res.data));    
+    axios.get(`http://www.omdbapi.com/?apikey=56546cdc&t=${input}`).then(res => setMovie(res.data));
   }
 
-  useEffect(() => {
+  if (movie === null) {
     initialFetch()
-  }, [])
+  }
 
   return (
       <div className="container">
@@ -38,7 +38,7 @@ function App() {
           <input type="text" className="searchInput" onChange={changeInput} placeholder="Type to search....." spellCheck='false'/>
           <button className="searchBtn" onClick={changeMovie}>Search</button>
         </div>
-        <MoviePane movie={movie} />
+        {(movie === null) ? '' : <MoviePane movie={movie} />}
       </div>
   );
 }
