@@ -1,9 +1,6 @@
 import './MoviePane.css'
 
 function MoviePane(props) {
-    if (props.movie === null) {
-        return "";
-    }
     return (
         <div className="movieDetails">
             <img src={props.movie.Poster} alt="img text" id='poster'/>
