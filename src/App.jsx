@@ -12,7 +12,7 @@ function App() {
   }
 
   const changeMovie = () => {
-    axios.get(`http://www.omdbapi.com/?apikey=56546cdc&t=${input}`)
+    axios.get(`https://www.omdbapi.com/?apikey=56546cdc&t=${input}`)
       .then(res => {
         if (res.data.Response === "True") {
           setMovie(res.data);
@@ -24,7 +24,7 @@ function App() {
   }
 
   const initialFetch = () => {
-    axios.get(`http://www.omdbapi.com/?apikey=56546cdc&t=${input}`).then(res => setMovie(res.data));
+    axios.get(`https://www.omdbapi.com/?apikey=56546cdc&t=${input}`).then(res => setMovie(res.data));
   }
 
   if (movie === null) {
