@@ -38,7 +38,7 @@ function App() {
           <input type="text" className="searchInput" onChange={changeInput} placeholder="Type to search....." spellCheck='false'/>
           <button className="searchBtn" onClick={changeMovie}>Search</button>
         </div>
-        {(movie === null) ? '' : <MoviePane movie={movie} />}
+        <MoviePane movie={movie} />
       </div>
   );
 }
