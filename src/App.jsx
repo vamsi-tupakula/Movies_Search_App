@@ -23,8 +23,12 @@ function App() {
       })
   }
 
-  useEffect(() => {
+  const initialFetch = () => {
     axios.get(`http://www.omdbapi.com/?apikey=56546cdc&t=tenet`).then(res => setMovie(res.data));    
+  }
+
+  useEffect(() => {
+    initialFetch()
   }, [])
 
   return (
